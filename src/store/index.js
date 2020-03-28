@@ -5,9 +5,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    allCountries:[],
-    mainSs:{},
-    isLoading:false,
     items: [{
         text: 'Home',
         to: '/',
@@ -40,7 +37,7 @@ export default new Vuex.Store({
         to: '/instructions',
         icon: 'mdi-account-multiple',
         meta:{
-          showToolbar: false,
+          showToolbar: true,
           showBottomNav: false
         }, 
       },
@@ -61,9 +58,6 @@ export default new Vuex.Store({
     bottomLink: (state)=> state.items.filter(link => link.meta.showBottomNav === true),
   },
   mutations: {
-    setAllCounties: (state, payload) => (state.allCountries = payload),
-    setMainSs:(state, payload)=> (state.mainSs = payload),
-    setIsloading:(state, payload)=> (state.isLoading = payload),
   },
   actions: {},
   modules: {}
