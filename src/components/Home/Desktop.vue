@@ -109,10 +109,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .leaflet-control-attribution {
   display: none;
 }
+</style>
+<style scoped>
 p{
     margin:0 !important;
     padding:0 !important;

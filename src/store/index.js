@@ -37,7 +37,7 @@ export default new Vuex.Store({
         to: '/instructions',
         icon: 'mdi-account-multiple',
         meta:{
-          showToolbar: true,
+          showToolbar: false,
           showBottomNav: false
         }, 
       },
