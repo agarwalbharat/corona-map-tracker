@@ -52,11 +52,6 @@ export default {
   components: {
     HelloWorld,
   },
-
-  beforeCreate(){
-    this.$vuetify.theme.dark  = true
-  },
-
   data: () => ({
     //
   }),
