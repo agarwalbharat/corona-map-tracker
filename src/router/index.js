@@ -14,7 +14,7 @@ const routes = [{
   {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
+    component: () => import( /* webpackChunkName: "about" */ '@/views/About'),
     meta: {
       title: "About - CoronaTracker",
     }
@@ -22,7 +22,7 @@ const routes = [{
   {
     path: '/map',
     name: 'map',
-    component: () => import(/* webpackChunkName: "map" */ '@/views/Map'),
+    component: () => import( /* webpackChunkName: "map" */ '@/views/Map'),
     meta: {
       title: "Map - CoronaTracker",
     }
@@ -30,7 +30,7 @@ const routes = [{
   {
     path: '/country',
     name: 'country',
-    component: () => import(/* webpackChunkName: "country" */ '@/views/Country'),
+    component: () => import( /* webpackChunkName: "country" */ '@/views/Country'),
     meta: {
       title: "Country - CoronaTracker",
     }
@@ -38,7 +38,7 @@ const routes = [{
   {
     path: '/country/:id',
     name: 'country-detailed',
-    component: () => import(/* webpackChunkName: "ViewCountry.vue" */ '@/views/ViewCountry'),
+    component: () => import( /* webpackChunkName: "ViewCountry.vue" */ '@/views/ViewCountry'),
     meta: {
       title: "Country - CoronaTracker",
     }
@@ -49,6 +49,12 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+});
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next()
 })
 
 export default router

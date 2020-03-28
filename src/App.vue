@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <AppBar />
-    <v-container :class="this.$vuetify.theme.dark == true?'black':'white'" fluid class="px-1">
+    <v-container class="fill-height pa-0 ma-0" fluid>
       <v-slide-y-reverse-transition>
         <router-view v-show="show" />
       </v-slide-y-reverse-transition>
@@ -30,3 +30,15 @@ export default {
   }
 };
 </script>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+</style>
