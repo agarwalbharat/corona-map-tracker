@@ -2,7 +2,7 @@
   <v-app-bar class="pa-0 ma-0" app fixed>
     <v-toolbar-title class="px-0">
       <div class="communityName">
-        <span class="google-font" style="text-decoration:none;font-weight:550;">SomeBlaBla</span>
+        <span class="google-font" style="text-decoration:none;font-weight:550;">COVID-19</span>
       </div>
     </v-toolbar-title>
 

@@ -33,6 +33,15 @@ export default new Vuex.Store({
         }, 
       },
       {
+        text: 'Instructions',
+        to: '/instructions',
+        icon: 'mdi-account-multiple',
+        meta:{
+          showToolbar: true,
+          showBottomNav: false
+        }, 
+      },
+      {
         text: 'About',
         to: '/about',
         icon: 'mdi-account-multiple',

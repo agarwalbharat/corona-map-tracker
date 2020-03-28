@@ -7,7 +7,7 @@
         v-for="(d,idx) in countryData"
         :key="idx"
         :lat-lng="[d.countryInfo.lat, d.countryInfo.long]"
-        :radius="d.cases*5"
+        :radius="(d.cases<1000)?d.cases*100:d.cases*8"
         color="red"
         fillColor="#f03"
         :fillOpacity="0.3"
@@ -17,8 +17,13 @@
             <v-img class="white--text align-end" :src="d.countryInfo.flag">
               <v-card-title>{{ d.country }}</v-card-title>
             </v-img>
-
-            <v-card-text class="text--primary"></v-card-text>
+            <v-card-text class="text--primary">
+              <v-card-text class="text--primary">
+                <p>Total Case: {{ d.cases }}</p>
+                <p>Deaths: {{ d.deaths }}</p>
+                <p>Recovered: {{ d.recovered }}</p>
+            </v-card-text>
+            </v-card-text>
           </v-card>
         </l-popup>
       </l-circle>
@@ -51,7 +56,7 @@
           </v-card-text>
         </v-card>
       </l-control>
-      <l-control :position="'bottomleft'" class="custom-control-watermark">Bharat Agarwal</l-control>
+      <l-control :position="'bottomleft'"><a href="https://iambharat.tk" target="_blank" style="text-decoration:none">Bharat Agarwal</a></l-control>
     </l-map>
   </v-container>
 </template>
@@ -73,7 +78,7 @@ export default {
   data: () => ({
     lat: 26.9967251,
     long: 75.7528487,
-    zoom: 4,
+    zoom: 3,
     center: latLng(26.9967251, 75.7528487),
     url:
       "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
@@ -81,8 +86,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .leaflet-control-attribution {
   display: none;
+}
+p{
+    margin:0 !important;
+    padding:0 !important;
 }
 </style>

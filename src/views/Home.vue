@@ -1,18 +1,19 @@
 <template>
   <v-content class="fill-height">
     <Desktop class="hidden-sm-and-down pa-0" :baseData="baseData" :countryData="countryData" :isLoading="isLoading"/>
+    <Mobile class="hidden-md-and-up" :isLoading="isLoading" :baseData="baseData"/>
   </v-content>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 import Desktop from "@/components/Home/Desktop";
+import Mobile from "@/components/Home/Mobile";
 
 export default {
   name: "Home",
   components: {
-    Desktop
+    Desktop,
+    Mobile
   },
   data: () => ({
     baseData:{},
