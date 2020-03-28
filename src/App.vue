@@ -53,6 +53,10 @@ export default {
     HelloWorld,
   },
 
+  beforeCreate(){
+    this.$vuetify.theme.dark  = true
+  },
+
   data: () => ({
     //
   }),
