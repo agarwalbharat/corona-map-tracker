@@ -1,11 +1,13 @@
 <template>
   <v-content class="fill-height">
-    <Desktop class="hidden-sm-and-down pa-0" :baseData="baseData" :countryData="countryData" :isLoading="isLoading"/>
-    <Mobile class="hidden-md-and-up" :isLoading="isLoading" :baseData="baseData"/>
+    <Desktop class="hidden-sm-and-down pa-0" :baseData="mainSs" :countryData="allCountries" :isLoading="isLoading"/>
+    <Mobile class="hidden-md-and-up" :isLoading="isLoading" :baseData="mainSs"/>
   </v-content>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 import Desktop from "@/components/Home/Desktop";
 import Mobile from "@/components/Home/Mobile";
 
@@ -16,50 +18,10 @@ export default {
     Mobile
   },
   data: () => ({
-    baseData:{},
-    countryData:[],
-    isLoading:false,
   }),
-  created(){
-    this.getBaseData();
-    this.getDataCountry();
+  computed: {
+    ...mapState(["mainSs", "allCountries","isLoading"])
   },
-  methods: {
-    getBaseData() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/all", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.baseData = doc;
-          this.isLoading = false
-        }).catch(e=>{
-          console.log(e);
-          this.isLoading = false;
-        });
-    },
-    getDataCountry() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.countryData = doc;
-          this.isLoading = false;
-        }).catch(e=>{
-          console.log(e);
-          this.isLoading = false;
-        });
-    }
-  }
 };
 </script>
 <style scoped>

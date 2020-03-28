@@ -43,6 +43,14 @@ const routes = [{
       title: "Country - CoronaTracker",
     }
   },
+  {
+    path: 'instructions',
+    name: 'instructions',
+    component: () => import( /* webpackChunkName: "ViewCountry.vue" */ '@/views/Instructions'),
+    meta: {
+      title: "Instructions - CoronaTracker",
+    }
+  },
 ]
 
 const router = new VueRouter({

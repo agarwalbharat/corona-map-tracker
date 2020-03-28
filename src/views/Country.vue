@@ -6,7 +6,7 @@
           class="elevation-0 pa-0 ma-0"
           style="border:1px solid #e0e0e0;border-radius:5px;"
         >
-          <v-toolbar-title class="mr-3 hidden-sm-and-down">Total Countries: {{ countryData.length }}</v-toolbar-title>
+          <v-toolbar-title class="mr-3 hidden-sm-and-down">Total Countries: {{ allCountries.length }}</v-toolbar-title>
           <v-spacer class="hidden-sm-and-down"></v-spacer>
           <v-text-field
             flat
@@ -21,7 +21,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" class="fill-height">
+      <v-col cols="12">
         <v-row justify="center" align="center" v-if="isLoading">
           <v-col col="12" md="2" class="text-center">
             <v-progress-circular :width="5" :size="50" color="indigo" indeterminate></v-progress-circular>
@@ -30,7 +30,7 @@
         <v-row v-else>
           <v-col cols="12" class="black">
             <v-data-iterator
-              :items="countryData"
+              :items="allCountries"
               :loading="isLoading"
               loading-text="Loading Speakers from Dir"
               :search="search"
@@ -81,39 +81,16 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "ALlCountries",
   data: () => ({
     search: "",
-    isLoading: false,
-    countryData: []
   }),
-  created() {
-    this.getDataCountry();
+  computed:{
+    ...mapState(["allCountries","isLoading"])
   },
-  methods: {
-    goToDetails(name) {
-      this.$router.push("/country/" + name);
-    },
-    getDataCountry() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.countryData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
-    }
-  }
 };
 </script>
 

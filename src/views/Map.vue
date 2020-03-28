@@ -3,7 +3,7 @@
     <l-map :zoom="zoom" :center="center" style="height: 100%; width: 100%">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-circle
-        v-for="(d,idx) in countryData"
+        v-for="(d,idx) in allCountries"
         :key="idx"
         :lat-lng="[d.countryInfo.lat, d.countryInfo.long]"
         :radius="(d.cases<1000)?d.cases*100:d.cases*8"
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LControl, LCircle, LPopup } from "vue2-leaflet";
 export default {
@@ -48,52 +49,10 @@ export default {
     center: latLng(26.9967251, 75.7528487),
     url:
       "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
-    baseData: {},
-    countryData: [],
-    isLoading: false
   }),
-  created() {
-    this.getBaseData();
-    this.getDataCountry();
+  computed:{
+    ...mapState(["allCountries","isLoading"])
   },
-  methods: {
-    getBaseData() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/all", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.baseData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
-    },
-    getDataCountry() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.countryData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
-    }
-  }
 };
 </script>
 
