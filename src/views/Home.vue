@@ -1,7 +1,7 @@
 <template>
   <v-content class="fill-height">
-    <Desktop class="hidden-sm-and-down pa-0" :baseData="baseData" :countryData="countryData" :isLoading="isLoading"/>
-    <Mobile class="hidden-md-and-up" :isLoading="isLoading" :baseData="baseData"/>
+    <Desktop class="hidden-sm-and-down pa-0" :baseData="baseData" :isLoading.sync="isLoading"/>
+    <Mobile class="hidden-md-and-up" :isLoading.sync="isLoading" :baseData="baseData"/>
   </v-content>
 </template>
 
@@ -22,7 +22,6 @@ export default {
   }),
   created(){
     this.getBaseData();
-    this.getDataCountry();
   },
   methods: {
     getBaseData() {
@@ -37,23 +36,6 @@ export default {
           console.log(doc);
           this.baseData = doc;
           this.isLoading = false
-        }).catch(e=>{
-          console.log(e);
-          this.isLoading = false;
-        });
-    },
-    getDataCountry() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.countryData = doc;
-          this.isLoading = false;
         }).catch(e=>{
           console.log(e);
           this.isLoading = false;

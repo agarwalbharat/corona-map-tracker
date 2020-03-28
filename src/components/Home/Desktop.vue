@@ -74,15 +74,38 @@ export default {
     LCircle,
     LPopup
   },
-  props: ["baseData", "countryData", "isLoading"],
+  props: ["baseData", "isLoading"],
   data: () => ({
+    countryData:[],
     lat: 26.9967251,
     long: 75.7528487,
     zoom: 3,
     center: latLng(26.9967251, 75.7528487),
     url:
       "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
-  })
+  }),
+  created(){
+    this.getDataCountry();
+  },
+  methods:{
+    getDataCountry() {
+      this.isLoading = true;
+      fetch("https://corona.lmao.ninja/countries", {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .then(doc => {
+          console.log(doc);
+          this.countryData = doc;
+          this.isLoading = false;
+        }).catch(e=>{
+          console.log(e);
+          this.isLoading = false;
+        });
+    }
+  }
 };
 </script>
 

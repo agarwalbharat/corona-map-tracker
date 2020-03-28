@@ -17,14 +17,16 @@
               <v-card-title>{{ d.country }}</v-card-title>
             </v-img>
             <v-card-text class="text--primary">
-                <p>Total Case: {{ d.cases }}</p>
-                <p>Deaths: {{ d.deaths }}</p>
-                <p>Recovered: {{ d.recovered }}</p>
+              <p>Total Case: {{ d.cases }}</p>
+              <p>Deaths: {{ d.deaths }}</p>
+              <p>Recovered: {{ d.recovered }}</p>
             </v-card-text>
           </v-card>
         </l-popup>
       </l-circle>
-      <l-control :position="'bottomleft'"><a href="https://iambharat.tk" target="_blank" style="text-decoration:none">Bharat Agarwal</a></l-control>
+      <l-control :position="'bottomleft'">
+        <a href="https://iambharat.tk" target="_blank" style="text-decoration:none">Bharat Agarwal</a>
+      </l-control>
     </l-map>
   </v-content>
 </template>
@@ -48,33 +50,13 @@ export default {
     center: latLng(26.9967251, 75.7528487),
     url:
       "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
-    baseData: {},
     countryData: [],
     isLoading: false
   }),
   created() {
-    this.getBaseData();
     this.getDataCountry();
   },
   methods: {
-    getBaseData() {
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/all", {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.baseData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
-    },
     getDataCountry() {
       this.isLoading = true;
       fetch("https://corona.lmao.ninja/countries", {
@@ -103,8 +85,8 @@ export default {
 }
 </style>
 <style scoped>
-p{
-    margin:0 !important;
-    padding:0 !important;
+p {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 </style>
