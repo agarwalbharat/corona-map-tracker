@@ -51,7 +51,6 @@
           </v-card-text>
         </v-card>
       </l-control>
-
       <l-control :position="'bottomleft'" class="custom-control-watermark">Bharat Agarwal</l-control>
     </l-map>
   </v-container>
@@ -59,7 +58,6 @@
 
 <script>
 import { latLng } from "leaflet";
-// import L from "leaflet";
 import { LMap, LTileLayer, LControl, LCircle, LPopup } from "vue2-leaflet";
 
 export default {
@@ -69,13 +67,9 @@ export default {
     LTileLayer,
     LControl,
     LCircle,
-    // LTooltip,
     LPopup
   },
   props: ["baseData", "countryData", "isLoading"],
-  mounted() {
-    console.log(this.baseData);
-  },
   data: () => ({
     lat: 26.9967251,
     long: 75.7528487,
