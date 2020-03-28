@@ -17,7 +17,7 @@ export default new Vuex.Store({
       {
         text: 'Map',
         to: '/map',
-        icon: 'mdi-google-maps',
+        icon: 'mdi-map',
         meta:{
           showToolbar: false,
           showBottomNav: true
@@ -44,7 +44,7 @@ export default new Vuex.Store({
       {
         text: 'About',
         to: '/about',
-        icon: 'mdi-account-multiple',
+        icon: 'mdi-comment-alert-outline',
         meta:{
           showToolbar: true,
           showBottomNav: true
