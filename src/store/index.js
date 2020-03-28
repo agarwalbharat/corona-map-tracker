@@ -37,16 +37,16 @@ export default new Vuex.Store({
         to: '/about',
         icon: 'mdi-account-multiple',
         meta:{
-          showToolbar: false,
+          showToolbar: true,
           showBottomNav: true
         }, 
       },
     ]
   },
   getters: {
-    links:(state)=>state.links,
-    bottomLink: (state)=> state.links.filter(link => link.meta.showBottomNav === true),
-    appBarLinks: (state)=> state.links.filter(link => link.meta.showAppBar === true),
+    links:(state)=>state.items,
+    appBarLinks: (state)=> state.items.filter(link => link.meta.showToolbar === true),
+    bottomLink: (state)=> state.items.filter(link => link.meta.showBottomNav === true),
   },
   mutations: {
   },
