@@ -24,21 +24,21 @@ export default new Vuex.Store({
         }, 
       },
       {
-        text: 'Country',
-        to: '/country',
-        icon: 'mdi-earth',
+        text: 'India',
+        to: '/india',
+        icon: 'mdi-map-marker',
         meta:{
           showToolbar: true,
           showBottomNav: true
         }, 
       },
       {
-        text: 'Instructions',
-        to: '/instructions',
-        icon: 'mdi-account-multiple',
+        text: 'Country',
+        to: '/country',
+        icon: 'mdi-earth',
         meta:{
-          showToolbar: false,
-          showBottomNav: false
+          showToolbar: true,
+          showBottomNav: true
         }, 
       },
       {

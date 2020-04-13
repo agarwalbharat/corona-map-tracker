@@ -10,7 +10,7 @@
         v-for="(link, i) in bottomLink"
         :key="i"
         :to="link.to"
-        class="ml-0 google-font"
+        class="ml-0"
         style="text-transform: capitalize;" 
         text
         small
@@ -45,7 +45,7 @@
 </script>
 
 <style scoped>
-/* .v-size--small{
+.v-size--small{
   min-width: 50px !important;
-} */
+}
 </style>

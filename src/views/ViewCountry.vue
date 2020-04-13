@@ -1,14 +1,14 @@
 <template>
   <v-content>
     <v-container fluid>
-      <v-row justify="center" align="center" v-if="isLoading">
+      <v-row  class="ma-0" align="center" v-if="isLoading">
           <v-col col="12" md="2" class="text-center">
             <v-progress-circular :width="5" :size="50" color="indigo" indeterminate></v-progress-circular>
           </v-col>
         </v-row>
-      <v-row justify="center" align="center" v-else>
+      <v-row class="ma-0" align="center" v-else>
         <v-col cols="12" class="text-center"><p style="font-size:40px;" class="font-weight-bold">{{ co.country }}</p></v-col>
-        <v-col cols="12" class="text-center ma-1 mt-2 pa-0">
+        <v-col cols="12" class="text-center mt-2 pa-0">
           <p>Total Cases</p>
           <p style="font-size:35px;" class="font-weight-bold">{{ co.cases }}</p>
         </v-col>

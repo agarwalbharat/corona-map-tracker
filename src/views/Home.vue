@@ -33,7 +33,6 @@ export default {
       })
         .then(res => res.json())
         .then(doc => {
-          console.log(doc);
           this.baseData = doc;
           this.isLoading = false
         }).catch(e=>{

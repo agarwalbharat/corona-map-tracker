@@ -104,7 +104,6 @@ export default {
       })
         .then(res => res.json())
         .then(doc => {
-          console.log(doc);
           this.countryData = doc;
           this.isLoading = false;
         })

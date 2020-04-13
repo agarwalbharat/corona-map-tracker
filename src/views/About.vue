@@ -1,6 +1,6 @@
 <template>
   <v-content class="ma-1">
-    <v-row justify="center" align="center">
+    <v-row justify="center" class="ma-0" align="center">
       <v-col>
         <v-img
           :src="require('@/assets/about.svg')"

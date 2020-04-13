@@ -36,6 +36,14 @@ const routes = [{
     }
   },
   {
+    path: '/india',
+    name: 'india',
+    component: () => import( /* webpackChunkName: "india" */ '@/views/India'),
+    meta: {
+      title: "India - CoronaTracker",
+    }
+  },
+  {
     path: '/country/:id',
     name: 'country-detailed',
     component: () => import( /* webpackChunkName: "ViewCountry.vue" */ '@/views/ViewCountry'),

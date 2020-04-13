@@ -1,5 +1,13 @@
 <template>
   <v-app>
+    <v-snackbar v-model="snackWithButtons" :timeout="timeout" bottom left class="snack">
+      {{ snackWithBtnText }}
+      <v-spacer />
+      <v-btn dark text color="#00f500" @click.native="refreshApp">{{ snackBtnText }}</v-btn>
+      <v-btn icon @click="snackWithButtons = false">
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-snackbar>
     <AppBar />
     <v-container class="fill-height pa-0 ma-0" fluid>
       <v-slide-y-reverse-transition>
@@ -23,10 +31,35 @@ export default {
     BottomNav
   },
   data: () => ({
-    show: false
+    show: false,
+    refreshing: false,
+    registration: null,
+    snackBtnText: '',
+    snackWithBtnText: '',
+    snackWithButtons: false,
+    timeout: 7000,
   }),
-  created() {
+  created(){
     this.show = true;
+    document.addEventListener('swUpdated', this.showRefreshUI, { once: true });
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (this.refreshing) return;
+        this.refreshing = true;
+      window.location.reload();
+    });
+  },
+  methods:{
+    showRefreshUI(e) {
+      this.registration = e.detail;
+      this.snackBtnText = 'Refresh';
+      this.snackWithBtnText = 'New version available!';
+      this.snackWithButtons = true;
+    },
+    refreshApp() {
+      this.snackWithButtons = false;
+      if (!this.registration || !this.registration.waiting) { return; }
+      this.registration.waiting.postMessage('skipWaiting');
+    }
   }
 };
 </script>
