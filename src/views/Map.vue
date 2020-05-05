@@ -1,12 +1,12 @@
 <template>
-  <v-content class="fill-height">
+  <v-content style="height:100%">
     <l-map :zoom="zoom" :center="center" style="height: 100%; width: 100%">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-circle
         v-for="(d,idx) in countryData"
         :key="idx"
         :lat-lng="[d.countryInfo.lat, d.countryInfo.long]"
-        :radius="(d.cases<1000)?d.cases*100:d.cases*8"
+        :radius="(d.cases<1000)?d.cases*100:(d.cases>155370)?d.cases/2:d.cases*8"
         color="red"
         fillColor="#f03"
         :fillOpacity="0.3"
@@ -34,6 +34,8 @@
 <script>
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LControl, LCircle, LPopup } from "vue2-leaflet";
+import services from '@/services/service';
+
 export default {
   name: "MobileMap",
   components: {
@@ -59,20 +61,15 @@ export default {
   methods: {
     getDataCountry() {
       this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
+      services.getDataCountry().then(res=>{
+          if (res.success == true) {
+            this.countryData = res.data;
+            this.isLoading = false;
+          }
+      }).catch(e=>{
+        alert(e);
+        this.isLoading = false;
       })
-        .then(res => res.json())
-        .then(doc => {
-          this.countryData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
     }
   }
 };

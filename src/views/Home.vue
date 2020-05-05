@@ -1,5 +1,5 @@
 <template>
-  <v-content class="fill-height">
+  <v-content style="height:100%">
     <Desktop class="hidden-sm-and-down pa-0" :baseData="baseData" :isLoading.sync="isLoading"/>
     <Mobile class="hidden-md-and-up" :isLoading.sync="isLoading" :baseData="baseData"/>
   </v-content>

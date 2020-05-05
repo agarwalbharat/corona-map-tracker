@@ -126,6 +126,26 @@
 	"Tamil Nadu": {
       "latitude": 11.1271,
       "longitude": 78.6569
+    },
+    "Lakshadweep": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
+    },
+    "Sikkim": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
+    },
+    "Nagaland": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
+    },
+    "Dadra and Nagar Haveli": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
+    },
+    "Daman and Diu": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
     }
 	
 }

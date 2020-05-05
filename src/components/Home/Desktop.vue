@@ -7,7 +7,7 @@
         v-for="(d,idx) in countryData"
         :key="idx"
         :lat-lng="[d.countryInfo.lat, d.countryInfo.long]"
-        :radius="(d.cases<1000)?d.cases*100:d.cases*8"
+        :radius="(d.cases<1000)?d.cases*100:(d.cases>155370)?d.cases/2:d.cases*8"
         color="red"
         fillColor="#f03"
         :fillOpacity="0.3"
@@ -27,7 +27,7 @@
           </v-card>
         </l-popup>
       </l-circle>
-      <l-control class="example-custom-control cl" :position="'bottomright'">
+      <l-control :position="'bottomright'">
         <v-card max-width="350" class="ma-0 pa-0">
           <v-card-title>Global Cases</v-card-title>
           <v-card-text class="text--primary">
@@ -64,6 +64,7 @@
 <script>
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LControl, LCircle, LPopup } from "vue2-leaflet";
+import services from '@/services/service';
 
 export default {
   name: "DesktopHome",
@@ -90,20 +91,15 @@ export default {
   methods:{
     getDataCountry() {
       this.isLoading = true;
-      fetch("https://corona.lmao.ninja/v2/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
+      services.getDataCountry().then(res=>{
+          if (res.success == true) {
+            this.countryData = res.data;
+            this.isLoading = false;
+          }
+      }).catch(e=>{
+        alert(e);
+        this.isLoading = false;
       })
-        .then(res => res.json())
-        .then(doc => {
-          console.log(doc);
-          this.countryData = doc;
-          this.isLoading = false;
-        }).catch(e=>{
-          console.log(e);
-          this.isLoading = false;
-        });
     }
   }
 };

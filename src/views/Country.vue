@@ -1,8 +1,16 @@
 <template>
-  <v-content class="px-5 black">
-    <v-row>
-      <v-col>
-        <v-toolbar
+  <v-content class="black" style="height:100%">
+    <v-container class="fill-height" v-if="isLoading">
+        <v-row justify="center" align="center">
+          <v-col col="12" md="2" class="text-center">
+            <v-progress-circular :width="5" :size="50" color="indigo" indeterminate></v-progress-circular>
+          </v-col>
+        </v-row>
+    </v-container>
+    <v-container v-else>
+        <v-row >
+          <v-col cols="12">
+            <v-toolbar
           class="elevation-0 pa-0 ma-0"
           style="border:1px solid #e0e0e0;border-radius:5px;"
         >
@@ -18,16 +26,7 @@
             single-line
           ></v-text-field>
         </v-toolbar>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12" class="fill-height">
-        <v-row justify="center" align="center" v-if="isLoading">
-          <v-col col="12" md="2" class="text-center">
-            <v-progress-circular :width="5" :size="50" color="indigo" indeterminate></v-progress-circular>
           </v-col>
-        </v-row>
-        <v-row v-else>
           <v-col cols="12" class="black">
             <v-data-iterator
               :items="countryData"
@@ -75,12 +74,13 @@
             </v-data-iterator>
           </v-col>
         </v-row>
-      </v-col>
-    </v-row>
+    </v-container>
   </v-content>
 </template>
 
 <script>
+import services from '@/services/service';
+
 export default {
   name: "ALlCountries",
   data: () => ({
@@ -97,20 +97,15 @@ export default {
     },
     getDataCountry() {
       this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
-        headers: {
-          "Content-Type": "application/json"
-        }
+      services.getDataCountry().then(res=>{
+          if (res.success == true) {
+            this.countryData = res.data;
+            this.isLoading = false;
+          }
+      }).catch(e=>{
+        alert(e);
+        this.isLoading = false;
       })
-        .then(res => res.json())
-        .then(doc => {
-          this.countryData = doc;
-          this.isLoading = false;
-        })
-        .catch(e => {
-          console.log(e);
-          this.isLoading = false;
-        });
     }
   }
 };

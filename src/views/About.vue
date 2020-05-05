@@ -1,5 +1,5 @@
 <template>
-  <v-content class="ma-1">
+  <v-content  style="height:100%">
     <v-row justify="center" class="ma-0" align="center">
       <v-col>
         <v-img
