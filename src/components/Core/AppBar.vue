@@ -16,15 +16,27 @@
       text
       @click="goTO($event, link)"
     >{{ link.text }}</v-btn>
+    <Info/>
+    <v-btn
+      to="/about"
+      class="ml-1"
+      icon
+      text
+      @click="goTO($event, link)"
+    ><v-icon>mdi-comment-alert-outline</v-icon></v-btn>
   </v-app-bar>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import Info from "@/components/Common/coronaModel";
+
 
 export default {
   name: "AppBar",
-  components: {},
+  components: {
+    Info
+  },
   data: () => ({}),
   computed: {
     ...mapGetters(["appBarLinks"])

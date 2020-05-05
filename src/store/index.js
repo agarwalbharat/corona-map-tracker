@@ -33,6 +33,15 @@ export default new Vuex.Store({
         }, 
       },
       {
+        text: 'Corona Test',
+        to: '/check',
+        icon: 'mdi-account-child-circle',
+        meta:{
+          showToolbar: true,
+          showBottomNav: true
+        }, 
+      },
+      {
         text: 'Country',
         to: '/country',
         icon: 'mdi-earth',
@@ -46,8 +55,8 @@ export default new Vuex.Store({
         to: '/about',
         icon: 'mdi-comment-alert-outline',
         meta:{
-          showToolbar: true,
-          showBottomNav: true
+          showToolbar: false,
+          showBottomNav: false
         }, 
       },
     ]

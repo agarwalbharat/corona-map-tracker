@@ -51,6 +51,14 @@ const routes = [{
       title: "Country - CoronaTracker",
     }
   },
+  {
+    path: '/check',
+    name: 'check-health',
+    component: () => import( /* webpackChunkName: "checkcovid.vue" */ '@/views/CheckCovid'),
+    meta: {
+      title: "Check-Covid - CoronaTracker",
+    }
+  },
 ]
 
 const router = new VueRouter({

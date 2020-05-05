@@ -74,4 +74,7 @@ body {
   height: 100%;
   width: 100%;
 }
+.v-dialog__content--active{
+  z-index: 1000 !important;
+}
 </style>

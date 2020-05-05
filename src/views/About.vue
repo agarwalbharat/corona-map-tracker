@@ -1,5 +1,6 @@
 <template>
   <v-content  style="height:100%">
+    <v-container class="fill-height">
     <v-row justify="center" class="ma-0" align="center">
       <v-col>
         <v-img
@@ -17,10 +18,11 @@
         </v-img>
         <p class="text-center">
           A Project Made with
-          <v-icon>mdi-heart</v-icon> by
+          <v-icon small>mdi-heart</v-icon> by
           <a href="https://iambharat.tk" target="_blank" style="text-decoration:none">Bharat Agarwal</a>
         </p>
       </v-col>
     </v-row>
+    </v-container>
   </v-content>
 </template>
