@@ -91,13 +91,14 @@ export default {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "x-pqww": "asd",
-            "x-date-req": "2020-03-31T03:41:38.743Z"
+            "x-tokden": "asd",
+            "x-date-req": "2020-04-13T21:27:04.977Z"
           }
         }
       )
         .then(res => res.json())
         .then(doc => {
+          console.log(doc)
           this.countryData = doc;
           this.countryData = doc.data.filter(res => {
             if (res.country == "IN") return true;

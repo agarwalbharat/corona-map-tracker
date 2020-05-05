@@ -1,0 +1,131 @@
+{
+	"Telengana":{
+      "latitude": 18.1124,
+      "longitude": 79.0193
+    },
+	"Punjab":{
+      "longitude": 75.3412,
+      "latitude": 31.1471
+    },
+	"Karnataka":{
+      "latitude": 15.3173,
+      "longitude": 75.7139
+    },
+	"Arunachal Pradesh":{
+      "latitude": 28.218,
+      "longitude": 94.7278
+    },
+	"Bihar": {
+      "latitude": 25.0961,
+      "longitude": 85.3131
+    },
+	"Andhra Pradesh": {
+      "latitude": 15.9129,
+      "longitude": 79.74
+    },
+	"Uttarakhand": {
+      "latitude": 30.0668,
+      "longitude": 79.0193
+    },
+	"Goa":{
+      "latitude": 15.2993,
+      "longitude": 74.124
+    },
+	"Puducherry":{
+      "latitude": 11.943179,
+      "longitude": 79.808206
+    },
+	"Uttar Pradesh": {
+      "latitude": 26.8467,
+      "longitude": 80.9462
+    },
+	"Manipur": {
+      "longitude": 93.9063,
+      "latitude": 24.6637
+    },
+	"Ladakh": {
+      "latitude": 34.152588,
+      "longitude": 77.577049
+    },
+	"Jharkhand": {
+      "latitude": 23.6102,
+      "longitude": 85.2799
+    },
+	"Delhi":{
+      "latitude": 28.7041,
+      "longitude": 77.1025
+    },
+	"Kerala":{
+      "latitude": 10.8505,
+      "longitude": 76.2711
+    },
+	"Maharashtra": {
+      "longitude": 75.7139,
+      "latitude": 19.7515
+    },
+	"Himachal Pradesh": {
+      "latitude": 31.1048,
+      "longitude": 77.1734
+    },
+	"Chhattisgarh": {
+      "latitude": 21.2787,
+      "longitude": 81.8661
+    },
+	"Mizoram": {
+      "latitude": 23.1645,
+      "longitude": 92.9376
+    },
+	"Haryana": {
+      "latitude": 29.0588,
+      "longitude": 76.0856
+    },
+	"Jammu and Kashmir": {
+      "latitude": 33.7782,
+      "longitude": 76.5762
+    },
+	"Tripura": {
+      "latitude": 23.9408,
+      "longitude": 91.9882
+    },
+	"Odisha": {
+      "latitude": 20.9517,
+      "longitude": 85.0985
+    },
+	"Andaman and Nicobar Islands": {
+      "latitude": 11.7401,
+      "longitude": 92.6586
+    },
+	"West Bengal": {
+      "latitude": 22.9868,
+      "longitude": 87.855
+    },
+	"Madhya Pradesh": {
+      "longitude": 78.6569,
+      "latitude": 22.9734
+    },
+	"Assam": {
+      "latitude": 26.2006,
+      "longitude": 92.9376
+    },
+	"Rajasthan": {
+      "latitude": 27.0238,
+      "longitude": 74.2179
+    },
+	"Meghalaya": {
+      "latitude": 25.467,
+      "longitude": 91.3662
+    },
+	"Gujarat":{
+      "latitude": 22.2587,
+      "longitude": 71.1924
+    },
+	"Chandigarh":{
+      "latitude": 30.7333,
+      "longitude": 76.7794
+    },
+	"Tamil Nadu": {
+      "latitude": 11.1271,
+      "longitude": 78.6569
+    }
+	
+}

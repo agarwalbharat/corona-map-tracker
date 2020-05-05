@@ -90,7 +90,7 @@ export default {
   methods:{
     getDataCountry() {
       this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries", {
+      fetch("https://corona.lmao.ninja/v2/countries", {
         headers: {
           "Content-Type": "application/json"
         }

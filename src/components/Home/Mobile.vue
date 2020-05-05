@@ -39,7 +39,7 @@ export default {
   methods:{
     getIndiaData(){
       this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries/india",{
+      fetch("https://corona.lmao.ninja/countries/v2/india",{
         headers:{
           "Content-type":"application/json"
         }
