@@ -80,8 +80,5 @@ body {
   width: 100%;
   z-index: 0;
 }
-.v-dialog__content--active{
-  z-index: 1000 !important;
-}
 
 </style>

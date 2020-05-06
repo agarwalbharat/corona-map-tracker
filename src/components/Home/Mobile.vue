@@ -34,23 +34,9 @@ export default {
     indiaData:{}
   }),
   created(){
-    this.getIndiaData();
   },
   methods:{
-    getIndiaData(){
-      this.isLoading = true;
-      fetch("https://corona.lmao.ninja/countries/v2/india",{
-        headers:{
-          "Content-type":"application/json"
-        }
-      }).then(res=>res.json()).then(doc=>{
-        this.indiaData = doc;
-        this.isLoading = false;
-      }).catch(e=>{
-        console.log(e);
-        this.isLoading = false
-      })
-    }
+    
   }
 };
 </script>
