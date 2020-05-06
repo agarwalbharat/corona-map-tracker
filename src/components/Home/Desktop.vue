@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="fill-height ma-0 pa-0">
     <!-- <div id="mapid" style="height:100%;width:100%;padding:0px;margin:0px;"></div> -->
-    <l-map :zoom="zoom" :center="center" style="height: 100%; width: 100%">
+    <l-map class="nodes-map" :zoom="zoom" :center="center" style="height: 100%; width: 100%">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-circle
         v-for="(d,idx) in countryData"

@@ -1,6 +1,6 @@
 <template>
   <v-content style="height:100%">
-    <l-map :zoom="zoom" :center="center" style="height: 100%; width: 100%">
+    <l-map class="nodes-map" :zoom="zoom" :center="center" style="height: 100%; width: 100%">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-circle
         v-for="(d,idx) in countryData"
@@ -24,6 +24,17 @@
           </v-card>
         </l-popup>
       </l-circle>
+      <l-control :position="'bottomright'"  v-if="isLoading">
+        <v-card max-width="95vw" class="ma-0 pa-0">
+          <v-card-text>
+            <v-row align="center" class="ma-0" v-if="isLoading">
+              <v-col cols="12" md="12" class="text-center">
+                <v-progress-circular :width="5"  v-if="isLoading" :size="50" color="indigo" indeterminate></v-progress-circular>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </l-control>
       <l-control :position="'bottomleft'">
         <a href="https://iambharat.tk" target="_blank" style="text-decoration:none">Bharat Agarwal</a>
       </l-control>

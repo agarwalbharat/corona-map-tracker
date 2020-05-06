@@ -3,7 +3,7 @@
       <!-- <h1 style="z-index:9999999">{{countryData[0]}}</h1>
       <h1 style="z-index:9999999">{{indiaLocation[`${countryData[0].state}`]}}</h1> -->
 
-    <l-map :zoom="zoom" :center="center" style="height: 100%; width: 100%">
+    <l-map :zoom="zoom" :center="center" class="nodes-map" style="height: 100%; width: 100%">
       <l-tile-layer :url="url"></l-tile-layer>
       <l-circle
         v-for="(d,idx) in countryData"

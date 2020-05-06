@@ -10,9 +10,7 @@ module.exports = {
     msTileColor: '#272727',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
-    manifestOptions: {
-      background_color: "#272727"
-    },
+    manifestPath:"./public/manifest.json",
     workboxOptions: {
       swSrc: './src/sw.js',
       swDest: 'service-worker.js',

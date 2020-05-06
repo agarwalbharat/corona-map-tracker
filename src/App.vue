@@ -48,6 +48,7 @@ export default {
       window.location.reload();
     });
   },
+  
   methods:{
     showRefreshUI(e) {
       this.registration = e.detail;
@@ -74,7 +75,13 @@ body {
   height: 100%;
   width: 100%;
 }
+.nodes-map {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
 .v-dialog__content--active{
   z-index: 1000 !important;
 }
+
 </style>
