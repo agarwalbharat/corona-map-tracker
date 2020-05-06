@@ -1,6 +1,6 @@
 {
-  "short_name": "COVID-19",
-  "name": "COVID-19 Tracker",
+  "short_name": "COVID-19 Map",
+  "name": "COVID-19 Map",
   "theme_color": "#272727",
   "background_color": "#272727",
   "display": "standalone",

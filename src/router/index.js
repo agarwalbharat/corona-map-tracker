@@ -8,7 +8,7 @@ const routes = [{
     name: 'home',
     component: () => import( /* webpackChunkName: "home" */ '@/views/Home'),
     meta: {
-      title: "Home - CoronaTracker",
+      title: "Home - CoronaMap",
     }
   },
   {
@@ -16,7 +16,7 @@ const routes = [{
     name: 'about',
     component: () => import( /* webpackChunkName: "about" */ '@/views/About'),
     meta: {
-      title: "About - CoronaTracker",
+      title: "About - CoronaMap",
     }
   },
   {
@@ -24,7 +24,7 @@ const routes = [{
     name: 'map',
     component: () => import( /* webpackChunkName: "map" */ '@/views/Map'),
     meta: {
-      title: "Map - CoronaTracker",
+      title: "Map - CoronaMap",
     }
   },
   {
@@ -32,7 +32,7 @@ const routes = [{
     name: 'country',
     component: () => import( /* webpackChunkName: "country" */ '@/views/Country'),
     meta: {
-      title: "Country - CoronaTracker",
+      title: "Country - CoronaMap",
     }
   },
   {
@@ -40,26 +40,26 @@ const routes = [{
     name: 'india',
     component: () => import( /* webpackChunkName: "india" */ '@/views/India'),
     meta: {
-      title: "India - CoronaTracker",
+      title: "India - CoronaMap",
     }
   },
   {
     path: '/country/:id',
     name: 'country-detailed',
-    component: () => import( /* webpackChunkName: "ViewCountry.vue" */ '@/views/ViewCountry'),
+    component: () => import( /* webpackChunkName: "ViewCountry" */ '@/views/ViewCountry'),
     meta: {
-      title: "Country - CoronaTracker",
+      title: "Country - CoronaMap",
     }
   },
   {
     path: '/check',
     name: 'check-health',
-    component: () => import( /* webpackChunkName: "checkcovid.vue" */ '@/views/CheckCovid'),
+    component: () => import( /* webpackChunkName: "checkcovid" */ '@/views/CheckCovid'),
     meta: {
-      title: "Check-Covid - CoronaTracker",
+      title: "Check-Covid - CoronaMap",
     }
   },
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
@@ -70,7 +70,7 @@ router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title;
   }
-  next()
-})
+  next();
+});
 
-export default router
+export default router;

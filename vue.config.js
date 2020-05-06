@@ -4,7 +4,7 @@ module.exports = {
     "vuetify"
   ],
   pwa: {
-    name: 'COVID-19 Tracker',
+    name: 'COVID-19 Map',
     workboxPluginMode: 'InjectManifest',
     themeColor: '#272727',
     msTileColor: '#272727',
