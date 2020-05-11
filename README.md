@@ -26,7 +26,7 @@ This application supports a pwa.
 
 ### Show some :heart: and :star: the repo to support the project. 
 
-For more, contact me @[facebook](https://www.facebook.com/bharatagsrwal), @[Twitter](https://www.twitter.com/bharatagsrwal) or @[Website](https://iambharat.tk)
+For more, contact me @[facebook](https://www.facebook.com/bharatagsrwal), @[Twitter](https://www.twitter.com/bharatagsrwal) or @[Website](https://iambharat.me)
 ### Screenshots
 #### Desktop
 <img src="/screenshots/1.png" height="200em" /> <img src="/screenshots/3.png" height="200em" />
@@ -72,5 +72,5 @@ Write me in [issues](https://github.com/bharatagsrwal/corona-map-tracker/issues)
 
 ## Follow :trophy:
 Follow me on :punch:
-[Bharat](https://github.com/bharatagsrwal) ([Facebook](https://www.facebook.com/bharatagsrwal)) ([Linkedin](https://www.linkedin.com/in/bharatagsrwal))([Website](https://iambharat.tk))([Twitter](https://www.twitter.com/bharatagsrwal))
+[Bharat](https://github.com/bharatagsrwal) ([Facebook](https://www.facebook.com/bharatagsrwal)) ([Linkedin](https://www.linkedin.com/in/bharatagsrwal))([Website](https://iambharat.me))([Twitter](https://www.twitter.com/bharatagsrwal))
 
