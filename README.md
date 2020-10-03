@@ -2,7 +2,7 @@
 Corona Map tracker made in Vue.js and Vuetify with the use of lmao.ninja and rootnet.in APIs
 
 # Getting Started
-A Corona (COVID-19) Map tracker made with `Vue.js` and `Vuetify`, its a fully functional web application with map of whole world and India, with statistics of corona affected person. 
+A Corona (COVID-19) Map tracker made with `Vue.js` and `Vuetify`.It's a fully functional web application with the map of whole world and India, with statistics of corona affected people. 
 This application supports a pwa.
 
 ## How to use?
@@ -22,7 +22,7 @@ This application supports a pwa.
 - A responsive and mobile friendly design.
 - Support Progressive web app (PWA).
 - Bottom navigation bar for fast navigation.
-- Well formated code and can be understandable by anyone.
+- Well formatted code and can be understood by anyone.
 
 ### Show some :heart: and :star: the repo to support the project. 
 
